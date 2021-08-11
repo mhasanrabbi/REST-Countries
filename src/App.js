@@ -1,9 +1,13 @@
-import './App.css';
+import { Container } from '@material-ui/core';
+import Header from './components/Header';
 
 function App() {
+
   return (
     <div>
-      App
+    <Container>
+      <Header/>
+    </Container>
     </div>
   );
 }
