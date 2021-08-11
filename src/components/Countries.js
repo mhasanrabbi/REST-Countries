@@ -1,30 +1,13 @@
-import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import React, { useContext } from 'react';
+import { StateContext } from '../context/GlobalState';
 
 
 const Countries = () => {
-  const [countries, setCountries] = useState([]);
-
-  useEffect(() => {
-
-    getData();
-
-  },[])
-
-  async function getData() {
-    try {
-      const response = await axios.get("https://restcountries.eu/rest/v2/all");
-      console.log(response.data)
-      setCountries(response.data);
-    } catch (error) {
-      console.error(error.message)
-    }
-  }
-
+  const {items} = useContext(StateContext)
 
   return (
     <div>
-      {countries.map((country) => {
+      {items.map((country) => {
         const {name, population, region, capital, flag, numericCode} = country
         return (
           <article key={numericCode}>
@@ -35,7 +18,6 @@ const Countries = () => {
             <h4>{region}</h4>
             <h4>{capital}</h4>
           </div>
-
           </article>
         )
       })}
