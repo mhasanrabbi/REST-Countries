@@ -1,12 +1,12 @@
-import React from "react";
-import SingleCountry from "../components/SingleCountry";
+// import React from "react";
+// import SingleCountry from "../components/SingleCountry";
 
-const Details = () => {
-  return (
-    <div>
-      <SingleCountry/>
-    </div>
-  )
-}
+// const Details = () => {
+//   return (
+//     <div>
+//       <SingleCountry/>
+//     </div>
+//   )
+// }
 
-export default Details;
+// export default Details;
