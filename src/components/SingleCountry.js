@@ -1,35 +1,32 @@
-import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
-import { StateContext } from '../context/GlobalState';
-
+import React from 'react';
+import { Link, useParams } from 'react-router-dom';
+import Loading from './Loading';
+import useFetch from './useFetch';
 
 const SingleCountry = () => {
-  const {items} = useContext(StateContext)
+  const { name } = useParams()
+  const { loading, error, data: country } = useFetch(`/name/${name}`)
 
+  if(loading) {
+    return <Loading/>
+  }
+  
   return (
     <div>
       <Link to="/">
         Back Home
       </Link>
-      {/* {items.map((item) => {
-          const {name, nativeName, numericCode, population, region, subregion, capital, currencies, languages, flag, borders} = item;
+      {
+        country.map((details) => {
+          const {name, capital } = details;
           return (
-            <div key={numericCode}>
-            {name}
-            {nativeName}
-            {population}
-            {region}
-            {subregion}
-            {capital}
-            {currencies}
-            {languages}
-            {flag}
-            {borders}
+            <div>
+            <h3>{name}</h3>
+            <h3>{capital}</h3>
             </div>
           )
         })
       }
-      ) */}
     </div>
   )
 }

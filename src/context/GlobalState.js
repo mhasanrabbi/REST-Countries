@@ -1,41 +1,31 @@
-import axios from 'axios';
-import React, { createContext, useEffect, useState } from 'react';
+import React, { createContext, useContext, useState } from 'react';
+import useFetch from '../components/useFetch';
+
+// API endpoint
 
 // creating context
 const StateContext = createContext();
 
 function StateProvider({children}) {
   // defining state for country
-  const [items, setItems] = useState([]);
-  const [country, setCountry] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [query, setQuery] = useState('');
+  const {loading, error, data:countries} = useFetch(`${query}`)
 
+  
 
-
-  // fetching country data
-  useEffect(() => {
-    getData();
-  },[])
-
-  async function getData() {
-    try {
-      const response = await axios.get("https://restcountries.eu/rest/v2/all");
-      console.log(response.data)
-      setItems(response.data);
-      setCountry(response.data.name);
-      setLoading(false);
-    } catch (error) {
-      console.error(error.message)
-    }
+    return (
+      <StateContext.Provider value={{countries, loading, error, query, setQuery }}>
+        {children}
+      </StateContext.Provider>
+    )
   }
 
 
 
-  return (
-    <StateContext.Provider value={{items, setItems, country, setCountry, loading }}>
-      {children}
-    </StateContext.Provider>
-  )
+
+
+export const useGlobalContext = () => {
+  return useContext(StateContext)
 }
 
 export { StateContext, StateProvider };

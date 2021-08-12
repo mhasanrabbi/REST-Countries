@@ -1,26 +1,24 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import Loading from '../components/Loading';
-import { StateContext } from '../context/GlobalState';
+import { useGlobalContext } from '../context/GlobalState';
 
 
 
 const Countries = () => {
-  const {items, setItems, loading} = useContext(StateContext)
+  const {countries, loading} = useGlobalContext();
 
 
-  const removeCountry = (numericCode) => {
-    const newCountry = items.filter((country) => country.numericCode !== numericCode)
-    setItems(newCountry)
+  if (loading) {
+    return <Loading/>
   }
-
-  if (loading) return <Loading/>
 
   return (
     <div>
-      {items.map((country) => {
+      {countries.map((country) => {
         const {name, population, region, capital, flag, numericCode} = country
         return (
+        <Link to={`/countries/${name}`}>
           <article key={numericCode}>
           <div>
             <img src={flag} alt={name}/>
@@ -28,14 +26,9 @@ const Countries = () => {
             <h4>{population}</h4>
             <h4>{region}</h4>
             <h4>{capital}</h4>
-            <div>
-              <Link to={`/countries/${name}`}>
-                Learn More
-              </Link>
-              <button onClick={() => removeCountry(numericCode)}>Remove Country</button>
-            </div>
           </div>
           </article>
+        </Link>
         )
       })}
     </div>
