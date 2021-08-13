@@ -32,8 +32,7 @@ function StateProvider({children}) {
        countries.filter(country => {
         return country.name.toLowerCase().includes( searchTerm.toLowerCase())
       })
-
-    )
+      )
   }, [searchTerm, countries])
 
     return (
