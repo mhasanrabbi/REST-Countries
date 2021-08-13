@@ -12,15 +12,14 @@ const SingleCountry = () => {
   }
   
   return (
-    <div>
+    <div >
       <Link to="/">
         Back Home
       </Link>
       {
-        country.map((details) => {
-          const {name, capital } = details;
+        country.map(({name, capital, numericCode }) => {
           return (
-            <div>
+            <div key={numericCode}>
             <h3>{name}</h3>
             <h3>{capital}</h3>
             </div>
