@@ -9,6 +9,7 @@ function StateProvider({children}) {
   const [query, setQuery] = useState('/all');
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResults, setSearchResults] = useState([]);
+  const [region, setRegion] = useState([]);
   const {loading, error, data:countries} = useFetch(`${query}`);
 
   // const searchHandler = (searchTerm) => {
@@ -35,8 +36,16 @@ function StateProvider({children}) {
       )
   }, [searchTerm, countries])
 
+  const filterRegions = (region) => {
+    if ( region === "All") {
+      setSearchResults(query)
+    }
+    const newRegion = countries.filter((country) => country.region === region);
+    setSearchResults(newRegion);
+  }
+
     return (
-      <StateContext.Provider value={{countries, loading, error, query, setQuery, searchTerm, setSearchTerm, searchResults, setSearchResults }}>
+      <StateContext.Provider value={{countries, loading, error, query, setQuery, searchTerm, setSearchTerm, searchResults, setSearchResults, region, setRegion, filterRegions }}>
         {children}
       </StateContext.Provider>
     )
