@@ -10,6 +10,7 @@ function StateProvider({children}) {
   const [query, setQuery] = useState('/all');
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResults, setSearchResults] = useState([]);
+  const [regions, setRegions] = useState([]);
   const {loading, error, data:countries} = useFetch(`${query}`);
   
   // const searchHandler = (searchTerm) => {
@@ -27,11 +28,7 @@ function StateProvider({children}) {
       //     setSearchResults(countries);
       //   }
       // };
-      const [regions, setRegions] = useState([]);
-      
-      const allRegions =['All',...new Set(countries.map((r) => r.region))];
-      console.log(allRegions);
-  
+
   const filterRegions = (region) => {
     if (region === "All") {
       setSearchResults(countries);
@@ -40,6 +37,7 @@ function StateProvider({children}) {
     const newRegion = countries.filter((country) => country.region === region);
     setSearchResults(newRegion);
   }
+  
   
   useEffect(() => {
     setSearchResults (
