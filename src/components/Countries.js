@@ -5,7 +5,7 @@ import { useGlobalContext } from '../context/GlobalState';
 import SearchForm from './SearchFilter';
 
 const Countries = () => {
-  const { loading, searchResults, filterRegions} = useGlobalContext();
+  const { loading, searchResults, regions, allRegions, filterRegions} = useGlobalContext();
   
   if (loading) {
     return <Loading/>
@@ -19,7 +19,7 @@ const Countries = () => {
         }}
         aria-label="Filter Countries By Region"
         >
-        <option value="All">Filter By Region</option>
+        <option value= "All" >All</option>
         <option value="Africa">Africa</option>
         <option value="Americas">America</option>
         <option value="Asia">Asia</option>
