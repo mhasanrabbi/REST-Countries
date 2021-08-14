@@ -28,16 +28,20 @@ function StateProvider({children}) {
       //     setSearchResults(countries);
       //   }
       // };
-
-  const filterRegions = (region) => {
-    if (region === "All") {
-      setSearchResults(countries);
-      return;
-    }
-    const newRegion = countries.filter((country) => country.region === region);
-    setSearchResults(newRegion);
-  }
+  useEffect(() => {
+    filterRegions();
+  },[]);
   
+  const filterRegions = (region) => {
+  if (region === "All") {
+    setSearchResults(countries);
+    return;
+  }
+  const newRegion = countries.filter((country) => country.region === region);
+  setSearchResults(newRegion);
+}
+  
+  console.log(filterRegions);
   
   useEffect(() => {
     setSearchResults (

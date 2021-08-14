@@ -1,5 +1,42 @@
+@import '~antd/dist/antd.css';
+
+/* General */
+
 body {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+.ant-layout {
+  background-color: #fff !important;
+}
+
+/* Header*/
+
+.ant-layout-header {
+  background-color: #fff;
+}
+
+.header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-flow: row wrap;
+  width: 100%;
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  border-bottom: 1px solid #000;
+  background-color: #fff;
+}
+
+.searchFilter {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  flex-flow: row wrap;
+  padding: 50px 0;
 }

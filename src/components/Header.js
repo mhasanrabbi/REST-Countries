@@ -1,15 +1,14 @@
+import { Button } from 'antd';
 import React from 'react';
-import './Header.css';
 
-function Header() {
+
+function HeaderContent() {
   return (
-    <header>
       <div className="header">
         <h2>Where in the world?</h2>
-        <button>Dark Mode</button>
+        <Button type="primary">Dark Mode</Button>
       </div>
-    </header>
   )
 }
 
-export default Header;
+export default HeaderContent;

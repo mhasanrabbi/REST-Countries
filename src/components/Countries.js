@@ -1,9 +1,8 @@
+import { Col, Row } from 'antd';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Loading from '../components/Loading';
 import { useGlobalContext } from '../context/GlobalState';
-import FilterRegion from './FilterRegion';
-import SearchForm from './SearchFilter';
 
 const Countries = () => {
   const { loading, searchResults} = useGlobalContext();
@@ -14,24 +13,21 @@ const Countries = () => {
 
   return (
     <div>
-      <div>
-        <SearchForm/>
-        <FilterRegion/>
-      </div>
+      
       {searchResults.map((country) => {
         const {name, population, region, capital, flag, numericCode} = country
         return (
-        <article key={numericCode}>
+          <Row gutter = {[16,24]} key={numericCode}>
           <Link to={`/countries/${name}` }>
-            <div>
+              <Col span={6}>
               <img src={flag} alt={name}/>
               <h3>{name}</h3>
               <h4>{population}</h4>
               <h4>{region}</h4>
               <h4>{capital}</h4>
-            </div>
+              </Col>
           </Link>
-        </article>
+        </Row>
         )
       })}
     </div>
