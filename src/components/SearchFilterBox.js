@@ -4,10 +4,10 @@ import SearchForm from "./SearchFilter";
 
 const SearchFilterBox = () => {
   return (
-    <div className="searchFilter">
-        <SearchForm/>
-        <FilterRegion/>
-      </div>
+    <div className="searchFilterBox">
+      <SearchForm/>
+      <FilterRegion/>
+    </div>
   )
 }
 
