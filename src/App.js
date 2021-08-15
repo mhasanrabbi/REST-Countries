@@ -9,7 +9,7 @@ import SingleCountry from './components/SingleCountry';
 function App() {
 
   return (
-    <Container maxWidth="lg">
+    <Container>
       <HeaderContent/>
         <Switch>
           <Route exact path="/">

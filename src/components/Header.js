@@ -1,11 +1,14 @@
+import { AppBar, Toolbar, Typography } from '@material-ui/core';
 import React from 'react';
 
 function HeaderContent() {
   return (
-      <div className="header">
-        <h2>Where in the world?</h2>
+      <AppBar position="sticky">
+        <Toolbar>
+        <Typography variant="h1">Where in the world?</Typography>
         <button>Dark Mode</button>
-      </div>
+        </Toolbar>
+      </AppBar>
   )
 }
 

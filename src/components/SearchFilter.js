@@ -15,14 +15,9 @@ const SearchForm = () => {
 
   return (
       <form onSubmit={e => e.preventDefault()}>
-        {/* <input
-        type="text" 
-        placeholder = "Search for country"
-        onChange={ e => setSearchTerm(e.target.value)}
-        /> */}
         <TextField
         type="text"
-        id="input-with-icon-textfield"
+        className = "search"
         placeholder="Search for country"
         onChange={ e => setSearchTerm(e.target.value)}
         InputProps={{
