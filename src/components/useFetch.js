@@ -12,7 +12,6 @@ const useFetch = (urlParams) => {
     setLoading(true)
     try {
       const response = await axios.get(url);
-      console.log(data)
       setData(response.data);
       
       if (data === "True") {
@@ -29,6 +28,7 @@ const useFetch = (urlParams) => {
   // fetching api data
   useEffect(() => {
     fetchData(`${API_ENDPOINT}${urlParams}`);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   },[urlParams])
   
   return { loading, error, data}

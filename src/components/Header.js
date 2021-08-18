@@ -1,4 +1,5 @@
-import { Grid } from '@material-ui/core';
+import { Button, Grid } from '@material-ui/core';
+import { Brightness3, WbSunny } from '@material-ui/icons';
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -19,7 +20,7 @@ const toggleTheme = () => {
   }
  else {
   setTheme('light-theme')
-}
+  }
 }
 
 useEffect(() => {
@@ -27,13 +28,18 @@ useEffect(() => {
   localStorage.setItem('theme', theme)
 }, [theme])
 
+const icon = 
+theme === "light-theme" ? <Brightness3/> : <WbSunny/>;
+const themeText = 
+theme === "light-theme" ? " Dark Mode" : " Light Mode"
+
   return (
       <Grid container 
       justifyContent="space-around"
       alignItems="center"
       className="header"
       >
-          <Grid item>
+        <Grid item>
             <h2>
               <Link to="/">
                 Where in the world?
@@ -41,7 +47,9 @@ useEffect(() => {
             </h2>
           </Grid>
           <Grid item>
-            <button onClick={toggleTheme}>Dark Mode</button>
+            <Button onClick={toggleTheme}>
+              {icon} { themeText}
+            </Button>
           </Grid>
       </Grid>
   )

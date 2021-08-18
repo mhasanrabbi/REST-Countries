@@ -26,7 +26,7 @@ const SingleCountry = () => {
       <Box className="row back-btn">
           <button className="btn" onClick={goBack}><ArrowBack/></button>
       </Box>
-      {country.map(({name, nativeName, capital, flag, col, population,region,subregion,currencies,languages,topLevelDomain,borders,alpha3code }) => {
+      {country.map(({name, nativeName, capital, flag, col, population,region,subregion,currencies,languages,topLevelDomain,borders }) => {
           return (
             <Box key={uuidv4()}
               className="row row-container">

@@ -4,7 +4,6 @@ import useFetch from '../components/useFetch';
 // creating context
 const StateContext = createContext();
 
-
 function StateProvider({children}) {
   // defining state for country
   const [query, setQuery] = useState('/all');
@@ -15,19 +14,19 @@ function StateProvider({children}) {
  
   useEffect(() => {
     filterRegions();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   },[]);
-  
+
   const filterRegions = (region) => {
-  if (region === "All") {
-    setSearchResults(countries);
-    return;
-  }
+    if (region === "All") {
+      setSearchResults(countries);
+      return;
+    }
+  
   const newRegion = countries.filter((country) => country.region === region);
   setSearchResults(newRegion);
-}
-  
-  console.log(filterRegions);
-  
+  }
+    
   useEffect(() => {
     setSearchResults (
        countries.filter(country => {
@@ -35,7 +34,6 @@ function StateProvider({children}) {
       })
       )
     }, [searchTerm, countries])
-    
 
     return (
       <StateContext.Provider value={{countries, loading, error, query, setQuery, searchTerm, setSearchTerm, searchResults, setSearchResults, regions, setRegions, filterRegions }}>

@@ -24,6 +24,7 @@ body {
   padding: 0;
   font-family: 'Nunito Sans', sans-serif;
   background-color: var(--clr-bcg);
+  transition: color 0.3s ease;
 }
 
 /* Header*/
@@ -53,6 +54,14 @@ input[type=placeholder] {
 
 .select {
   width: 14%;
+}
+
+.select input[type=text] {
+  color: var(--clr-font);
+}
+
+.filterText {
+  color: var(--clr-font);
 }
 
 .select p {
@@ -176,4 +185,12 @@ a {
 
 .MuiCard-root {
   box-shadow: var(--clr-elements) 0px 2px 8px 0px;
+}
+
+.MuiInputBase-root {
+  color: var(--clr-font);
+}
+
+.MuiButton-label {
+  color: var(--clr-font);
 }
