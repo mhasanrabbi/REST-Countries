@@ -113,3 +113,15 @@ a {
   height: 15vh;
   align-items: center;
 }
+
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.loading {
+  width: 100px;
+  height: 100px;
+}
