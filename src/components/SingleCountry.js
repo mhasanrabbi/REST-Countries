@@ -2,6 +2,7 @@ import { Box, Container } from '@material-ui/core';
 import { ArrowBack } from '@material-ui/icons';
 import React from 'react';
 import { Link, useHistory, useParams } from 'react-router-dom';
+import { v4 as uuidv4 } from 'uuid';
 import Loading from './Loading';
 import useFetch from './useFetch';
 
@@ -9,7 +10,7 @@ import useFetch from './useFetch';
 const SingleCountry = () => {
   let history = useHistory();
   const { name } = useParams()
-  const { loading, error, data: country } = useFetch(`/name/${name}`)
+  const { loading, data: country } = useFetch(`/name/${name}`)
 
  
   if(loading) {
@@ -27,7 +28,7 @@ const SingleCountry = () => {
       </Box>
       {country.map(({name, nativeName, capital, flag, col, numericCode,population,region,subregion,currencies,languages,topLevelDomain,borders,alpha3code }) => {
           return (
-            <Box key={numericCode}
+            <Box key={uuidv4()}
               className="row row-container">
             <Box className="col img-col">
               <img src={flag} alt={col} className="flag-img"/>
