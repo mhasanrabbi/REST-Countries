@@ -1,17 +1,35 @@
-/* General */
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap');
+
+/* :root {
+  --clr-bcg: hsl(0, 0%, 98%);
+  --clr-font: hsl(200, 15%, 8%);
+  --clr-elements: hsl(0, 0%, 52%);
+} */
+
+.dark-theme {
+  --clr-bcg: hsl(207, 26%, 17%);
+  --clr-font:  hsl(0, 0%, 100%);
+  --clr-elements: hsl(209, 23%, 22%);
+}
+
+.light-theme {
+  --clr-bcg: hsl(0, 0%, 98%);
+  --clr-font: hsl(200, 15%, 8%);
+  --clr-elements: hsl(0, 0%, 52%);
+}
 
 body {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   font-family: 'Nunito Sans', sans-serif;
+  background-color: var(--clr-bcg);
 }
 
 /* Header*/
 
 .header {
-  background-color: #fff;
+  background-color: var(--clr-bcg);
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
@@ -36,7 +54,7 @@ body {
 
 a {
   text-decoration: none;
-  color: #000;
+  color: var(--clr-font);
 }
 
 .row {
@@ -69,10 +87,12 @@ a {
 
 .card-content p {
   font-weight: 600;
+  color: var(--clr-font);
 }
 
 .info-text {
   font-weight: 300;
+  color: var(--clr-font);
 }
 
 .row-container {
@@ -92,16 +112,19 @@ a {
 
 .col h2 {
   font-size: 2.4rem;
+  color: var(--clr-font);
 }
 
 .col p {
   margin: 0.3rem 0;
+  color: var(--clr-font);
 }
 
 .first-col p span,
 .second-col p span,
 .third-col p span {
   font-weight: 600;
+  color: var(--clr-font);
 }
 
 .btn {
@@ -110,7 +133,8 @@ a {
   outline: none;
   border: 0 solid #fff;
   border-radius: 5px;
-  background-color: #fff;
+  background-color: var(--clr-bcg);
+  color: var(--clr-font);
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
@@ -133,4 +157,9 @@ a {
 .loading {
   width: 100px;
   height: 100px;
+}
+
+.card-content {
+  background-color: var(--clr-bcg);
+  color: var(--clr-font);
 }
