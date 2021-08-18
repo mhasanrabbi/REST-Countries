@@ -35,8 +35,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://www.frontendmentor.io/solutions/react-js-context-api-custom-hook-material-ui-M02xm0wln)
-- Live Site URL: [Add live site URL here](https://restcountriesapi-react.netlify.app/)
+- Solution URL: [Front End Mentor](https://www.frontendmentor.io/solutions/react-js-context-api-custom-hook-material-ui-M02xm0wln)
+- Live Site URL: [Site Link](https://restcountriesapi-react.netlify.app/)
 
 
 ### Built with
