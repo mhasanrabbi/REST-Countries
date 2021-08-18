@@ -30,10 +30,9 @@ const region = [
 ];
 
 const FilterRegion = () => {
-  const {filterRegions, loading, regions} = useGlobalContext();
+  const {filterRegions} = useGlobalContext();
 
   return (
-
     <TextField
         select
         className = "select"

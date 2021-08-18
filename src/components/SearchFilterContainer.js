@@ -1,6 +1,6 @@
 import React from "react";
-import FilterRegion from "./FilterRegion";
-import SearchForm from "./SearchFilter";
+import FilterRegion from "./Filter";
+import SearchForm from "./Search";
 
 const SearchFilterBox = () => {
   return (

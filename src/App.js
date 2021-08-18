@@ -1,7 +1,7 @@
 import { Route, Switch } from "react-router-dom";
 import Countries from './components/Countries';
 import Header from './components/Header';
-import SearchFilterBox from './components/SearchFilterBox';
+import SearchFilterBox from './components/SearchFilterContainer';
 import SingleCountry from './components/SingleCountry';
 
 

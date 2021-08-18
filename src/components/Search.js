@@ -6,7 +6,7 @@ import { useGlobalContext } from '../context/GlobalState';
 
 const SearchForm = () => {
 
-  const { loading,  setSearchTerm } = useGlobalContext();
+  const { setSearchTerm } = useGlobalContext();
 
   return (
       <form onSubmit={e => e.preventDefault()}>
