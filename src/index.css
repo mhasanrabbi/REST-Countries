@@ -30,7 +30,7 @@ body {
 
 .header {
   background-color: var(--clr-bcg);
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  box-shadow: var(--clr-elements) 0px 2px 8px 0px;
 }
 
 /* .searchFilterBox */
@@ -44,10 +44,20 @@ body {
   padding: 40px 0;
 }
 
+input[type=text],
+input[type=placeholder] {
+  color: var(--clr-font);
+}
+
 /* select region box */
 
 .select {
   width: 14%;
+}
+
+.select p {
+  color: var(--clr-font);
+  opacity: 0.6;
 }
 
 /* Link */
@@ -82,7 +92,7 @@ a {
 .img-col img {
   max-width: 100%;
   height: auto;
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  box-shadow: var(--clr-elements) 0px 2px 8px 0px;
 }
 
 .card-content p {
@@ -135,7 +145,7 @@ a {
   border-radius: 5px;
   background-color: var(--clr-bcg);
   color: var(--clr-font);
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  box-shadow: var(--clr-elements) 0px 2px 8px 0px;
 }
 
 .btn:hover {
@@ -162,4 +172,8 @@ a {
 .card-content {
   background-color: var(--clr-bcg);
   color: var(--clr-font);
+}
+
+.MuiCard-root {
+  box-shadow: var(--clr-elements) 0px 2px 8px 0px;
 }

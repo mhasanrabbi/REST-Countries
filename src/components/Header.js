@@ -2,9 +2,16 @@ import { Grid } from '@material-ui/core';
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
+const getStorageTheme = () => {
+  let theme = 'light-theme'
+  if(localStorage.getItem('theme')) {
+    theme = localStorage.getItem('theme')
+  }
+  return theme;
+}
 
 function Header() {
-const [theme, setTheme] = useState('light-theme')
+const [theme, setTheme] = useState(getStorageTheme())
 
 const toggleTheme = () => {
   if (theme === 'light-theme') {
@@ -17,6 +24,7 @@ const toggleTheme = () => {
 
 useEffect(() => {
   document.documentElement.className = theme
+  localStorage.setItem('theme', theme)
 }, [theme])
 
   return (
