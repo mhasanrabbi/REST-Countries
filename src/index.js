@@ -2,17 +2,20 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
 import App from './App';
-import { StateProvider } from './context/GlobalState';
+import { StateProvider } from './context/CountryContext';
+import ThemeProvider from './context/ThemeContext';
 import './index.css';
 
 
 ReactDOM.render(
-  <React.StrictMode>
+  <ThemeProvider>
     <StateProvider>
-      <Router>
-        <App />
-      </Router>
+      <React.StrictMode>
+        <Router>
+          <App />
+        </Router>
+      </React.StrictMode>
     </StateProvider>
-  </React.StrictMode>,
+  </ThemeProvider>,
   document.getElementById('root')
 );

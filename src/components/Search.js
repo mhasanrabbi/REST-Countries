@@ -2,7 +2,7 @@ import InputAdornment from '@material-ui/core/InputAdornment';
 import TextField from '@material-ui/core/TextField';
 import SearchOutlinedIcon from '@material-ui/icons/SearchOutlined';
 import React from "react";
-import { useGlobalContext } from '../context/GlobalState';
+import { useGlobalContext } from '../context/CountryContext';
 
 const SearchForm = () => {
 

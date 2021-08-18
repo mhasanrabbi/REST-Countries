@@ -1,7 +1,10 @@
 import { Grid } from '@material-ui/core';
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 
 function Header() {
+
   return (
       <Grid container 
       justifyContent="space-around"
@@ -9,7 +12,11 @@ function Header() {
       className="header"
       >
           <Grid item>
-            <h2>Where in the world?</h2>
+            <h2>
+              <Link to="/">
+                Where in the world?
+              </Link>
+            </h2>
           </Grid>
           <Grid item>
             <button>Dark Mode</button>

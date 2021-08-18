@@ -1,6 +1,6 @@
 import { MenuItem, TextField } from '@material-ui/core';
 import React from 'react';
-import { useGlobalContext } from '../context/GlobalState';
+import { useGlobalContext } from '../context/CountryContext';
 
 const region = [
   {

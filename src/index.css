@@ -1,10 +1,11 @@
 /* General */
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap');
 
 body {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Nunito Sans', sans-serif;
 }
 
 /* Header*/
@@ -66,6 +67,14 @@ a {
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
+.card-content p {
+  font-weight: 600;
+}
+
+.info-text {
+  font-weight: 300;
+}
+
 .row-container {
   justify-content: space-around;
   align-items: center;
@@ -92,7 +101,7 @@ a {
 .first-col p span,
 .second-col p span,
 .third-col p span {
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .btn {
