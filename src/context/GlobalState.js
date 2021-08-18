@@ -12,22 +12,7 @@ function StateProvider({children}) {
   const [searchResults, setSearchResults] = useState([]);
   const [regions, setRegions] = useState([]);
   const {loading, error, data:countries} = useFetch(`${query}`);
-  
-  // const searchHandler = (searchTerm) => {
-    //   setSearchTerm(searchTerm);
-    //   if (searchTerm !== "") {
-  //     const newCountryList = countries.filter((country) => {
-    //       return Object.values(country)
-    //         .join(" ")
-    //         .toLowerCase()
-    //         .includes(searchTerm.toLowerCase());
-    //     });
-    //     setSearchResults(newCountryList);
-    //     console.log(newCountryList);
-    //   } else {
-      //     setSearchResults(countries);
-      //   }
-      // };
+ 
   useEffect(() => {
     filterRegions();
   },[]);

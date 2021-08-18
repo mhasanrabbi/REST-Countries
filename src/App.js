@@ -1,7 +1,6 @@
-import { Container } from "@material-ui/core";
 import { Route, Switch } from "react-router-dom";
 import Countries from './components/Countries';
-import HeaderContent from './components/Header';
+import Header from './components/Header';
 import SearchFilterBox from './components/SearchFilterBox';
 import SingleCountry from './components/SingleCountry';
 
@@ -9,8 +8,8 @@ import SingleCountry from './components/SingleCountry';
 function App() {
 
   return (
-    <Container>
-      <HeaderContent/>
+    <>
+      <Header/>
         <Switch>
           <Route exact path="/">
             <SearchFilterBox/>
@@ -18,7 +17,7 @@ function App() {
             </Route>
           <Route path="/countries/:name" children={<SingleCountry/>}></Route>
         </Switch>
-    </Container>
+    </>
   );
 }
 

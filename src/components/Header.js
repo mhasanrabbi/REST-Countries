@@ -1,15 +1,21 @@
-import { AppBar, Toolbar, Typography } from '@material-ui/core';
+import { Grid } from '@material-ui/core';
 import React from 'react';
 
-function HeaderContent() {
+function Header() {
   return (
-      <AppBar position="sticky">
-        <Toolbar>
-        <Typography variant="h1">Where in the world?</Typography>
-        <button>Dark Mode</button>
-        </Toolbar>
-      </AppBar>
+      <Grid container 
+      justifyContent="space-around"
+      alignItems="center"
+      className="header"
+      >
+          <Grid item>
+            <h2>Where in the world?</h2>
+          </Grid>
+          <Grid item>
+            <button>Dark Mode</button>
+          </Grid>
+      </Grid>
   )
 }
 
-export default HeaderContent;
+export default Header;

@@ -3,15 +3,10 @@ import TextField from '@material-ui/core/TextField';
 import SearchOutlinedIcon from '@material-ui/icons/SearchOutlined';
 import React from "react";
 import { useGlobalContext } from '../context/GlobalState';
-import Loading from "./Loading";
 
 const SearchForm = () => {
 
   const { loading,  setSearchTerm } = useGlobalContext();
-
-  if (loading) {
-    return <Loading/>
-  }
 
   return (
       <form onSubmit={e => e.preventDefault()}>
@@ -25,7 +20,7 @@ const SearchForm = () => {
             <InputAdornment position="start">
               <SearchOutlinedIcon />
             </InputAdornment>
-          ),
+          )
         }}
       />
       </form>
