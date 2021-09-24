@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 
-const API_ENDPOINT = `https://restcountries.eu/rest/v2`
+const API_ENDPOINT = `https://restcountries.com/v2`
 
 const useFetch = (urlParams) => {
   const [data, setData] = useState([]);
